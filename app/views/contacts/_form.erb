@@ -1,0 +1,15 @@
+<%= form_for ([@project, @contact]) do |f| %>
+    <%= f.label :name%>*<br>
+    <%= f.text_field :name %><br>
+    <%= f.hidden_field :project_id, value: @project.id %><br>
+    <% @contact.custom_field_values.each do |value| %>
+        <p><%= custom_field_tag_with_label :contact, value %></p>
+    <% end %>
+    <div class="box">
+      <p>
+        <label><%=l(:label_attachment_plural)%></label>
+        <%= render :partial => 'attachments/form' %>
+      </p>
+    </div>
+    <%= f.submit %>
+<% end %>

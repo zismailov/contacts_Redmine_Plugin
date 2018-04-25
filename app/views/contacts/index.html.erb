@@ -1,0 +1,21 @@
+<h2>ContactController#index</h2>
+
+<% @contacts.each do |contact| %>
+    <%= contact.name%>
+    <% if User.current.allowed_to?(:view_contacts,@project) %>
+      <%= link_to 'detail', project_contact_path(@project, contact[:id]) %>
+    <%end%>
+    <% if User.current.allowed_to?(:edit_contact,@project) %>
+      <%= link_to 'edit', edit_project_contact_path(@project, contact[:id]) %>
+    <%end%>
+    <% if User.current.allowed_to?(:delete_contacts, @project) %>
+      <%= link_to 'delete', project_contact_path(@project, contact[:id]),
+                            data:{confirm: "Are you sure to delete this contact?"},
+                            method: :delete%>
+    <% end %>
+    <br>
+<% end %>
+<br>
+<% if User.current.allowed_to?(:create_contact,@project) %>
+  <%= link_to 'new contact', new_project_contact_path(@project) %><br>
+<%end%>
