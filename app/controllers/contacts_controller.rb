@@ -56,7 +56,6 @@ class ContactsController < ApplicationController
   private
 
   def find_contact
-    binding.pry
     @contact = Contact.find(params[:id])
   rescue ActiveRecord::RecordNotFound
     render_404

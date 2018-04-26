@@ -3,8 +3,6 @@ class Contact < ActiveRecord::Base
 
   validates :name, presence: true
 
-  attr_accessor :id
-
   safe_attributes "name", "project_id", "custom_fields", "custom_field_values"
   acts_as_customizable
   acts_as_attachable delete_permission: :delete_contacts, view_permission: :view_contacts

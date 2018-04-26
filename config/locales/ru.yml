@@ -1,6 +1,5 @@
-# Russian strings go here for Rails i18n
-en:
-  # my_label: "My label"
+ru:
   label_contact_name: "Имя:"
   label_contact_plural: "Контакты"
   notice_params_needed: "Параметры со звездой (*) обязательны к заполнению"
+  label_contact_plural: "Список контактов"

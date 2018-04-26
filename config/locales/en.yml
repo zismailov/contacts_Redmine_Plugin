@@ -1,6 +1,5 @@
-# English strings go here for Rails i18n
 en:
-  # my_label: "My label"
   label_contact_name: "Contact name:"
   label_contact_plural: "Contacts"
   notice_params_needed: "Parameters with star (*) are needed"
+  label_contact_plural: Contacts List
